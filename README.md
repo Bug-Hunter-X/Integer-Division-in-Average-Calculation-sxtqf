@@ -1,0 +1,3 @@
+# Integer Division in Swift Average Calculation
+This repository demonstrates a common error in Swift: integer division when calculating the average of an array of Doubles. The `calculateAverage` function uses `Double(numbers.count)` to ensure floating-point division. However, if numbers is an array of Int, it can still lead to incorrect results.
+The bug is in the line `return sum / Double(numbers.count)`. If both sum and numbers.count were integers (or implicitly treated as integers), the division would truncate the result, leading to an inaccurate average.  The solution uses explicit type casting to ensure that floating-point division is performed, even when the input numbers are integers.
